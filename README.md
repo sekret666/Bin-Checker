@@ -9,10 +9,13 @@ A simple php telegram bot to check if the bin is valid or not
 ``ADD YOU BOT TOKEN IN LINE 12``
 
 **THEN DEPLOY YOUR REPO BY** ``https://heroku.com/deploy?template=<ur git link>``
+☝️☝️Waste of time
 
-**AFTER DEPLOY SET WEBHOOK BY** ``api.telegram.org/bot<ur bot token>/setwebhook?url=<ur heroku link>/bot.php``
+### Just Create an app and connect GitHub then connect repo
 
-**AFTER THIS REMOVE YOUR BOT TOKEN FROM THE REPO FOR YOUR SAFTEY**
+**AFTER DEPLOYING SET WEBHOOK BY** ``https://api.telegram.org/bot<ur bot token>/setwebhook?url=<ur heroku link>/bot.php``
+
+**AFTER THIS REMOVE YOUR BOT TOKEN FROM THE REPO FOR YOUR SAFETY**
 
 ## HELP ME
 
