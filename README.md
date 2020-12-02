@@ -2,6 +2,8 @@
 
 A simple Telegram bot, in PHP, to check if the bin is valid or not.
 
+Demo:- https://telegram.dog/V3_binbot
+
 # DEPLOY
 YOU CAN SIMPLY DEPLOY ON HEROKU BY CLICKING THE BUTTON BELOW
 
