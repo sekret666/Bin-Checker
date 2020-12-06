@@ -57,37 +57,36 @@ if ($text == "/start") {
                 'chat_id' =>$chat_id,
                 'text' =>"***$START_MESSAGE
 
-Use*** `/bin xxxxx` ***to check bin on bin-su.***",
+Use*** `/iban xxxxx` ***to check bin on bin-su.***",
  'parse_mode'=>'MarkDown',
             
         ]);
- }if(strpos($text,"/bin") !== false){ 
-$bin = trim(str_replace("/bin","",$text)); 
+ }if(strpos($text,"/iban") !== false){ 
+$bin = trim(str_replace("/iban","",$text)); 
 
-$data = json_decode(file_get_contents("https://bins-su-api.now.sh/api/$bin"),true);
-$bank = $data['data']['bin'];
-$vendor =  $data['data']['vendor'];
-$type =  $data['data']['type'];
-$level =  $data['data']['level'];
-$bank =  $data['data']['bank'];
-$country =  $data['data']['country'];
+$data = json_decode(file_get_contents("https://openiban.com/validate/$Domain?getBIC=true&validateBankCode=true"),true);
+$value = $data['valid'];
+$indusbots1 = $data['iban'];
+$indusbots2 = $data['bankData']['bankCode'];
+$indusbots3 = $data['bankData']['name'];
+$indusbots4 = $data['bankData']['bic'];
+$indusbots5 = $data['messages'][0];
 
- if($data['data']){
+ if($data['valid']){
 bot('sendmessage', [
                 'chat_id' =>$chat_id,
-                'text' =>"***VALID BIN✅
+                'text' =>"***VALID iban✅
                
-➤ Bɪɴ : $bin
+➤ Bɪɴ : $indusbots1
 
-➤ Tʏᴘᴇ : $type
+➤ Tʏᴘᴇ : $indusbots2
 
-➤ Bʀᴀɴᴅ : $vendor
+➤ Bʀᴀɴᴅ : $indusbots3
 
-➤ Bᴀɴᴋ : $bank
+➤ Bᴀɴᴋ : $indusbots4
 
-➤ Cᴏᴜɴᴛʀʏ : $country
+➤ Cᴏᴜɴᴛʀʏ : $indusbots5
 
-➤ Cʀᴇᴅɪᴛ/Dᴇʙɪᴛ : $type
 
 🔺BIN CHECKED FROM DATABASE OF BIN-SU🔻***",
 'parse_mode'=>"MarkDown",
